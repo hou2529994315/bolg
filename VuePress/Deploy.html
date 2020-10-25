@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>网站部署 | 首页</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    
+    <meta name="description" content="Just playing around">
+    
+    <link rel="preload" href="/Blog.github.io/assets/css/0.styles.a4f560a6.css" as="style"><link rel="preload" href="/Blog.github.io/assets/js/app.ed9e9523.js" as="script"><link rel="preload" href="/Blog.github.io/assets/js/2.ad6d6dbb.js" as="script"><link rel="preload" href="/Blog.github.io/assets/js/6.13b841de.js" as="script"><link rel="prefetch" href="/Blog.github.io/assets/js/10.368610ac.js"><link rel="prefetch" href="/Blog.github.io/assets/js/11.36f164b9.js"><link rel="prefetch" href="/Blog.github.io/assets/js/12.7a0c3fe0.js"><link rel="prefetch" href="/Blog.github.io/assets/js/13.8bd297f3.js"><link rel="prefetch" href="/Blog.github.io/assets/js/3.d3482037.js"><link rel="prefetch" href="/Blog.github.io/assets/js/4.e39903c7.js"><link rel="prefetch" href="/Blog.github.io/assets/js/5.4c12e2c3.js"><link rel="prefetch" href="/Blog.github.io/assets/js/7.ac848acd.js"><link rel="prefetch" href="/Blog.github.io/assets/js/8.5ad8c660.js"><link rel="prefetch" href="/Blog.github.io/assets/js/9.f9df1ec7.js">
+    <link rel="stylesheet" href="/Blog.github.io/assets/css/0.styles.a4f560a6.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/Blog.github.io/" class="home-link router-link-active"><img src="/Blog.github.io/assets/monkey.jpg" alt="首页" class="logo"> <span class="site-name can-hide">首页</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/Blog.github.io/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/Blog.github.io/VuePress/" class="nav-link router-link-active">
+  VuePress
+</a></div><div class="nav-item"><a href="/Blog.github.io/Docker/" class="nav-link">
+  Docker
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/Blog.github.io/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/Blog.github.io/VuePress/" class="nav-link router-link-active">
+  VuePress
+</a></div><div class="nav-item"><a href="/Blog.github.io/Docker/" class="nav-link">
+  Docker
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/Blog.github.io/VuePress/" aria-current="page" class="sidebar-link">VuePress</a></li><li><a href="/Blog.github.io/VuePress/CreateProject.html" class="sidebar-link">创建工程</a></li><li><a href="/Blog.github.io/VuePress/StaticFile.html" class="sidebar-link">静态资源</a></li><li><a href="/Blog.github.io/VuePress/Deploy.html" aria-current="page" class="active sidebar-link">网站部署</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Blog.github.io/VuePress/Deploy.html#使用cnpm部署到git-page" class="sidebar-link">使用cnpm部署到Git Page</a></li></ul></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="网站部署"><a href="#网站部署" class="header-anchor">#</a> 网站部署</h1> <h2 id="使用cnpm部署到git-page"><a href="#使用cnpm部署到git-page" class="header-anchor">#</a> 使用cnpm部署到Git Page</h2> <h3 id="创建github仓库"><a href="#创建github仓库" class="header-anchor">#</a> 创建github仓库</h3> <p><img src="/Blog.github.io/assets/img/2020-10-25-15-51-17.1a7677ce.png" alt=""></p> <p>根据自己的需求填写仓库名称，此示例使用 <code>blog</code>
+注意一定要选择<code>public</code>，私有仓库会限制访问
+<img src="/Blog.github.io/assets/img/2020-10-25-15-52-48.60d09fab.png" alt=""></p> <h3 id="配置本地vuepress工程"><a href="#配置本地vuepress工程" class="header-anchor">#</a> 配置本地vuepress工程</h3> <p>添加文件夹 <code>/docs/.vuepress/</code>
+添加配置文件 <code>/docs/.vuepress/config.js</code>
+文件内需要有如下内容</p> <div class="language- extra-class"><pre class="language-text"><code>module.exports = {
+    base:'/blog/'  //github上的仓库名字
+}
+</code></pre></div><h3 id="添加部署文件"><a href="#添加部署文件" class="header-anchor">#</a> 添加部署文件</h3> <p>在<code>package.json</code>的同级目录创建文件 <code>deploy.sh</code></p> <p>文件内容为</p> <div class="language- extra-class"><pre class="language-text"><code>#!/usr/bin/env sh
+
+# 确保脚本抛出遇到的错误
+set -e
+
+# 生成静态文件
+npm run docs:build
+
+# 进入生成的文件夹
+cd docs/.vuepress/dist
+
+# 如果是发布到自定义域名
+# echo 'www.example.com' &gt; CNAME
+
+git init
+git add -A
+git commit -m 'deploy'
+
+# 如果发布到 https://&lt;USERNAME&gt;.github.io
+git push -f git@github.com:&lt;USERNAME&gt;/bolg.git master
+cd -
+</code></pre></div><p><code>package.json</code>文件中添加</p> <div class="language- extra-class"><pre class="language-text"><code> &quot;scripts&quot;: {
+    &quot;deploy&quot;: &quot;bash deploy.sh&quot;
+  },
+</code></pre></div><p>终端路径调整会工程根目录，输入指令</p> <div class="language- extra-class"><pre class="language-text"><code>cnpm run deploy
+</code></pre></div><p>此使可能会报错，没有 <code>bash</code> 命令</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/Blog.github.io/VuePress/StaticFile.html" class="prev">
+        静态资源
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/Blog.github.io/assets/js/app.ed9e9523.js" defer></script><script src="/Blog.github.io/assets/js/2.ad6d6dbb.js" defer></script><script src="/Blog.github.io/assets/js/6.13b841de.js" defer></script>
+  </body>
+</html>
